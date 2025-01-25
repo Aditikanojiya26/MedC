@@ -430,7 +430,9 @@
                 Cancer is uncontrolled cell growth that may spread, caused by mutations or lifestyle
                 factors.
                 Treatment includes surgery, chemotherapy, and radiation.</p>
-            <a href="#" class="btn btn-dark">Join</a>
+                <div class="d-grid">
+                <button class="btn btn-dark" type="button">Join</button>
+            </div>
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -441,7 +443,9 @@
             <p class="card-text">
                 Diabetes is a chronic condition where the body struggles to regulate blood sugar due to
                 insufficient insulin or ineffective usage.</p>
-            <a href="#" class="btn btn-dark">Join</a>
+                <div class="d-grid">
+                <button class="btn btn-dark" type="button">Join</button>
+            </div>        
         </div>
     </div>
     <div class="card" style="width: 18rem;">
@@ -453,7 +457,9 @@
             PCOD (Polycystic Ovarian Disease) is a hormonal disorder causing enlarged ovaries with
             cysts,
             leading to irregular periods, weight gain, and infertility.</p>
-        <a href="#" class="btn btn-dark">Join</a>
+        <div class="d-grid">
+            <button class="btn btn-dark" type="button">Join</button>
+        </div>
     </div>
     </div>
 
@@ -465,7 +471,9 @@
             <p class="card-text">
                 Migraine is a neurological condition causing intense headaches, often with nausea,
                 sensitivity to light or sound, and visual disturbances, triggered by various factors.</p>
-            <a href="#" class="btn btn-dark">Join</a>
+            <div class="d-grid">
+                <button class="btn btn-dark" type="button">Join</button>
+            </div>
         </div>
     </div>
     </div>
