@@ -72,7 +72,7 @@
 
         .bpart_hover:hover {
             transform: scale(1.1);
-            
+
         }
 
         .explore-section {
@@ -97,7 +97,7 @@
 
         .login-box:hover {
             background-color: #d6ebf9;
-            
+
         }
 
         .login-box h3 {
@@ -141,78 +141,92 @@
             font-size: 14px;
             font-weight: bold;
             color: #333;
-           
+
             margin-top: -89px;
         }
+
         .containerr {
             display: flex;
             overflow-x: auto;
             padding: 20px;
             gap: 20px;
+
+        }
+
+
+        .card-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 50px;
+            perspective: 1000px;
+            /* Enables the 3D effect */
+        }
+
+        .custom-card {
+            width: 300px;
+            height: 400px;
+            transition: transform 0.8s;
+            transform-style: preserve-3d;
+            /* Ensures 3D rotation works */
+            position: relative;
+        }
+
+        .custom-card:hover {
+            transform: rotateY(180deg);
+        }
+
+        .card-front,
+        .card-back {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            /* Hides the back when the front is visible */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+        }
+
+        .card-front {
+            background-color: #ffffff;
+        }
+
+        .card-back {
+            background-color: #f8f9fa;
+            transform: rotateY(180deg);
+        }
+
+        .card-img-top-doc{
+            width: 200px;
+            height: 280px;
+            object-fit: cover;
             
         }
 
-        .doctor-card {
-            background: #fff;
-            border: 1px solid #ddd;
-            border-radius: 8px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-            width: 300px;
-            flex-shrink: 0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 20px;
-            height: 400px;
-           
-        }
-
-        .doctor-card img {
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            margin-bottom: 15px;
-        }
-
-        .doctor-card h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .doctor-card p {
-            font-size: 14px;
-            color: #666;
-            text-align: center;
-            margin: 10px 0;
-        }
-
-        .rating {
-            display: flex;
-            align-items: center;
-            margin-bottom: 10px;
-        }
-
-        .rating span {
-            margin-left: 5px;
-            font-size: 14px;
-            color: #28a745;
-        }
-
-        .consult {
-            margin-top: auto;
-            padding: 10px 20px;
-            background-color: #007bff;
-            color: white;
+        .card-footer-icons a {
+            margin: 0 10px;
             text-decoration: none;
-            border-radius: 4px;
-            text-align: center;
-            display: block;
+            color: #007bff;
         }
 
-        .consult:hover {
-            background-color: #0056b3;
+        .card-footer-icons a:hover {
+            color: #0056b3;
         }
+
+        .container {
+            margin: 0px;
+        }
+
+        .maincointainer {
+            display: flex;
+            justify-content: space-between;
+
+        }
+        
     </style>
 </head>
 
@@ -296,140 +310,167 @@
             </div>
         </div>
         <hr class="mt-5" style="border: 1px solid black;">
-        <h1 style="color:darkblue; font-weight: 600; text-shadow: 1px 1px 1px rgba(132, 17, 17, 0.1); padding-top:40px; padding-bottom:20px">
-                    Popular Doctors Available</h1>
-            </div>
-        <div class="containerr">
-        <div class="doctor-card">
-            <img src="https://via.placeholder.com/80" alt="Doctor">
-            <h3>Dr. Patel Nishtha</h3>
-            <p>Dermatology, 7 years of experience<br>Kosmoderma, Bengaluru</p>
-            <div class="rating">
-                <span>&#9733; 4.5</span>
-            </div>
-            <a href="#" class="consult">Consult Now - ₹299</a>
+        <h1
+            style="color:darkblue; font-weight: 600; text-shadow: 1px 1px 1px rgba(132, 17, 17, 0.1); padding-top:40px; padding-bottom:20px">
+            Popular Doctors Available</h1>
         </div>
-
-        <div class="doctor-card">
-            <img src="https://via.placeholder.com/80" alt="Doctor">
-            <h3>Dr. L Rajesh</h3>
-            <p>Gastroenterology, 12 years of experience<br>KIMS Hospitals, Hyderabad</p>
-            <div class="rating">
-                <span>&#9733; 4.6</span>
+    </section>
+    <div class="maincointainer">
+        <div class="container">
+            <div class="card-container">
+                <!-- Rotating Card -->
+                <div class="custom-card">
+                    <!-- Front Side -->
+                    <div class="card-front">
+                        <img src="https://th.bing.com/th?id=OIP.29VUfn60cwIHwtvm2kzAogHaH6&w=241&h=258&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Profile Image" class="card-img-top-doc">
+                        <h5 class="card-title mt-3">Sunlimetech</h5>
+                        <p class="card-text text-center">This is the front side with an image, title, and description.
+                        </p>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="card-back">
+                        <h5 class="card-title">Contact Info</h5>
+                        <p class="card-text">This is the back side with additional information.</p>
+                        <div class="card-footer-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="consult">Consult Now - ₹399</a>
         </div>
-
-        <div class="doctor-card">
-            <img src="https://via.placeholder.com/80" alt="Doctor">
-            <h3>Dr. Megha Tandon</h3>
-            <p>Dermatology, 7 years of experience<br>Dermaclinix, Delhi</p>
-            <div class="rating">
-                <span>&#9733; 4.3</span>
+        <div class="container">
+            <div class="card-container">
+                <!-- Rotating Card -->
+                <div class="custom-card">
+                    <!-- Front Side -->
+                    <div class="card-front">
+                        <img src="https://th.bing.com/th?id=OIP.29VUfn60cwIHwtvm2kzAogHaH6&w=241&h=258&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" class="card-img-top-doc" alt="Profile Image" class="card-img-top-doc">
+                        <h5 class="card-title mt-3">Sunlimetech</h5>
+                        <p class="card-text text-center">This is the front side with an image, title, and description.
+                        </p>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="card-back">
+                        <h5 class="card-title">Contact Info</h5>
+                        <p class="card-text">This is the back side with additional information.</p>
+                        <div class="card-footer-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="consult">Consult Now - ₹299</a>
         </div>
-
-        <div class="doctor-card">
-            <img src="https://via.placeholder.com/80" alt="Doctor">
-            <h3>Dr. Alekhya Rallapalli</h3>
-            <p>Dermatology, 5 years of experience<br>Medlife, Chennai</p>
-            <div class="rating">
-                <span>&#9733; 4.2</span>
+        <div class="container">
+            <div class="card-container">
+                <!-- Rotating Card -->
+                <div class="custom-card">
+                    <!-- Front Side -->
+                    <div class="card-front">
+                        <img src="https://th.bing.com/th?id=OIP.29VUfn60cwIHwtvm2kzAogHaH6&w=241&h=258&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Profile Image" class="card-img-top-doc">
+                        <h5 class="card-title mt-3">Sunlimetech</h5>
+                        <p class="card-text text-center">This is the front side with an image, title, and description.
+                        </p>
+                    </div>
+                    <!-- Back Side -->
+                    <div class="card-back">
+                        <h5 class="card-title">Contact Info</h5>
+                        <p class="card-text">This is the back side with additional information.</p>
+                        <div class="card-footer-icons">
+                            <a href="#"><i class="fab fa-facebook"></i></a>
+                            <a href="#"><i class="fab fa-twitter"></i></a>
+                            <a href="#"><i class="fab fa-google"></i></a>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <a href="#" class="consult">Consult Now - ₹350</a>
+        </div>
+        <div>
+            <div class="container">
+                <div class="card-container">
+                    <!-- Rotating Card -->
+                    <div class="custom-card">
+                        <!-- Front Side -->
+                        <div class="card-front">
+                            <img src="https://th.bing.com/th?id=OIP.29VUfn60cwIHwtvm2kzAogHaH6&w=241&h=258&c=8&rs=1&qlt=90&o=6&dpr=1.3&pid=3.1&rm=2" alt="Profile Image" class="card-img-top-doc">
+                            <h5 class="card-title mt-3">Sunlimetech</h5>
+                            <p class="card-text text-center">This is the front side with an image, title, and
+                                description.</p>
+                        </div>
+                        <!-- Back Side -->
+                        <div class="card-back">
+                            <h5 class="card-title">Contact Info</h5>
+                            <p class="card-text">This is the back side with additional information.</p>
+                            <div class="card-footer-icons">
+                                <a href="#"><i class="fab fa-facebook"></i></a>
+                                <a href="#"><i class="fab fa-twitter"></i></a>
+                                <a href="#"><i class="fab fa-google"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <hr class="mt-5" style="border: 1px solid black;">
-        <div class="com_part">
-            <div class="community_heading" style="margin-top: 70px;">
-                <h1 style="color:darkblue; font-weight: 600; text-shadow: 1px 1px 1px rgba(132, 17, 17, 0.1);">
-                    Join
-                    Community</h1>
-            </div>
-            <div class="containerr mt-5 mb-5" style="display: flex; justify-content: space-evenly;">
-                <div class="card" style="width: 18rem;">
-                    <img src="./images/https://th.bing.com/th/id/OIP.Fw1kL9U6s0UvkudPWSEuQQHaD2?w=334&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                        class="card-img-top" alt="..." height="178px">
-                    <div class="card-body">
-                        <h5 class="card-title">Cancer</h5>
-                        <p class="card-text">
-                            Cancer is uncontrolled cell growth that may
-                            spread, caused by mutations or lifestyle
-                            factors.
-                            Treatment includes surgery, chemotherapy, and
-                            radiation.</p>
-                        <a href="#" class="btn btn-dark">Join</a>
-                    </div>
-                </div>
-                <div class="card" style="width: 18rem;">
-                    <img src="./images/https://th.bing.com/th/id/OIP.jbQK-EX6WYNCTiQUoz1o4QHaEn?w=294&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                        class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Diabetes</h5>
-                        <p class="card-text">
-                            Diabetes is a chronic condition where the body
-                            struggles to regulate blood sugar due to
-                            insufficient insulin or ineffective usage.</p>
-                        <a href="#" class="btn btn-dark">Join</a>
-                    </div>
-                </div>
+    <h1
+        style="color:darkblue; font-weight: 600; text-shadow: 1px 1px 1px rgba(132, 17, 17, 0.1); padding-top:40px; padding-bottom:20px; text-align: center;">
+        Join Community</h1>
 
-                <div class="card" style="width: 18rem;">
-                    <img src="./images/https://th.bing.com/th/id/OIP.xKv7vsM1tknuBPCZvTLsfgHaD4?w=307&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                        height="178px" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">PCOD</h5>
-                        <p class="card-text">
-                            PCOD (Polycystic Ovarian Disease) is a hormonal
-                            disorder causing enlarged ovaries with
-                            cysts,
-                            leading to irregular periods, weight gain, and
-                            infertility.</p>
-                        <a href="#" class="btn btn-dark">Join</a>
-                    </div>
-                </div>
-
-                <div class="card" style="width: 18rem;">
-                    <img src="./images/https://th.bing.com/th/id/OIP.MPc4EAzBKvWEqIS8DdGqJQHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
-                        height="178px" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Migraine</h5>
-                        <p class="card-text">
-                            Migraine is a neurological condition causing
-                            intense headaches, often with nausea,
-                            sensitivity to light or sound, and visual
-                            disturbances, triggered by various factors.</p>
-                        <a href="#" class="btn btn-dark">Join</a>
-                    </div>
-                </div>
-            </div>
+<div class="containerr mt-5 mb-5" style="display: flex; justify-content: space-evenly;">
+    <div class="card" style="width: 18rem;">
+        <img src="https://th.bing.com/th/id/OIP.Fw1kL9U6s0UvkudPWSEuQQHaD2?w=334&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            class="card-img-top" alt="..." height="178px">
+        <div class="card-body">
+            <h5 class="card-title">Cancer</h5>
+            <p class="card-text">
+                Cancer is uncontrolled cell growth that may spread, caused by mutations or lifestyle
+                factors.
+                Treatment includes surgery, chemotherapy, and radiation.</p>
+            <a href="#" class="btn btn-dark">Join</a>
         </div>
-        <div class="footer">
-            <div class="container">
-                <footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
-                    <div class="col-md-4 d-flex align-items-center">
-                        <span class="mb-3 mb-md-0 text-body-secondary">©
-                            2024 MedC, Inc</span>
-                    </div>
-
-                    <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                        <li class="ms-3"><a class="text-body-secondary" href="#"><i
-                                    class="fa-brands fa-instagram"></i></a>
-                        </li>
-                        <li class="ms-3"><a class="text-body-secondary" href="#"><i
-                                    class="fa-brands fa-facebook"></i></a>
-                        </li>
-                        <li class="ms-3"><a class="text-body-secondary" href="#"><i
-                                    class="fa-brands fa-linkedin"></i></a>
-                        </li>
-                    </ul>
-                </footer>
-            </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img src="https://th.bing.com/th/id/OIP.jbQK-EX6WYNCTiQUoz1o4QHaEn?w=294&h=183&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Diabetes</h5>
+            <p class="card-text">
+                Diabetes is a chronic condition where the body struggles to regulate blood sugar due to
+                insufficient insulin or ineffective usage.</p>
+            <a href="#" class="btn btn-dark">Join</a>
         </div>
-    </section>
+    </div>
+    <div class="card" style="width: 18rem;">
+    <img src="https://th.bing.com/th/id/OIP.xKv7vsM1tknuBPCZvTLsfgHaD4?w=307&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+        height="178px" class="card-img-top" alt="...">
+    <div class="card-body">
+        <h5 class="card-title">PCOD</h5>
+        <p class="card-text">
+            PCOD (Polycystic Ovarian Disease) is a hormonal disorder causing enlarged ovaries with
+            cysts,
+            leading to irregular periods, weight gain, and infertility.</p>
+        <a href="#" class="btn btn-dark">Join</a>
+    </div>
+    </div>
 
-
+    <div class="card" style="width: 18rem;">
+        <img class="doc_img" src="https://th.bing.com/th/id/OIP.MPc4EAzBKvWEqIS8DdGqJQHaHa?w=177&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7"
+            height="178px" class="card-img-top" alt="...">
+        <div class="card-body">
+            <h5 class="card-title">Migraine</h5>
+            <p class="card-text">
+                Migraine is a neurological condition causing intense headaches, often with nausea,
+                sensitivity to light or sound, and visual disturbances, triggered by various factors.</p>
+            <a href="#" class="btn btn-dark">Join</a>
+        </div>
+    </div>
+    </div>
+    <?php include '../footer.php'; ?>
+    <div id="google_translate_element" class="tbtn"></div>
 </body>
 <script>
     var i = 0;
